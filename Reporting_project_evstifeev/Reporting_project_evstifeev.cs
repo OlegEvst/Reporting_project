@@ -6,8 +6,10 @@
 Console.WriteLine("Введите любые символы через ','");
 
 string[] values = Console.ReadLine().Split(new char[] { ',' });
-
+// Введите символы через запятую
 string[] GetArray(string[] inputArray)
+/* Метод получает строковый массив и возвращает сокращённый строковый массив
+ в котором присутсвуют только элементы чья длина меньше или равна 3 */
 {
     int count = 0;
     int length = 3;
@@ -23,10 +25,13 @@ string[] GetArray(string[] inputArray)
                 else count++;
             }
     Array.Resize(ref array, array.Length - count); 
+    /* Свойство изменения размера массива, данное свойство необходимо,
+     чтобы в новый массив не возвращались нули вместо элементов чья длина больше 3 */ 
     return array;
 }
 
 void PrintinputArray(string[] inputArr)
+// Метод печатает исходный массив
 {   
     Console.Write("[");
         for (int j = 0; j <  inputArr.Length; j++)
@@ -37,6 +42,7 @@ void PrintinputArray(string[] inputArr)
 } 
 
 void PrintArray(string[] printArr)
+// Метод печатает обработтанный массив
 {   
     Console.Write("[");
         for (int k = 0; k < printArr.Length; k++)
