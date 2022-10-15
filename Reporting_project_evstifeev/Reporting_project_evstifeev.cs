@@ -26,16 +26,26 @@ string[] GetArray(string[] inputArray)
     return array;
 }
 
+void PrintinputArray(string[] inputArr)
+{   
+    Console.Write("[");
+        for (int j = 0; j <  inputArr.Length; j++)
+        {
+            Console.Write((j !=  inputArr.Length - 1) ? $"{inputArr[j]}," : $"{inputArr[j]}");
+        }
+    Console.Write("] -> ");
+} 
+
 void PrintArray(string[] printArr)
 {   
     Console.Write("[");
-    for (int j = 0; j < printArr.Length; j++)
-    {
-        Console.Write($"{printArr[j]},");
-    }
+        for (int k = 0; k < printArr.Length; k++)
+        {
+            Console.Write((k != printArr.Length - 1) ? $"{printArr[k]}," : $"{printArr[k]}");
+        }
     Console.Write("]");
-    Console.WriteLine();
 } 
 
+PrintinputArray(values);
 PrintArray(GetArray(values));
 
