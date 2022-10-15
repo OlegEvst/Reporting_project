@@ -9,28 +9,33 @@ string[] values = Console.ReadLine().Split(new char[] { ',' });
 
 string[] GetArray(string[] inputArray)
 {
-    string[] array = new string[inputArray.Length];
-
-    for(int i = 0; i < array.Length; i++)
-    {
-        if(inputArray[i].Length <= 3)
-        {
-            array[i] = inputArray[i]; 
-        }
-    }
+    int count = 0;
+    int length = 3;
+    int pos = 0;
+        string[] array = new string[inputArray.Length];
+            for(int i = 0; i < array.Length; i++)
+            {
+                if(inputArray[i].Length <= length) 
+                {
+                array[pos] = inputArray[i];
+                pos++;
+                }
+                else count++;
+            }
+    Array.Resize(ref array, array.Length - count); 
     return array;
 }
 
 void PrintArray(string[] printArr)
-{
-        for(int l = 0; l < printMx.GetLength(1); l++) 
-        {
-        Console.Write($"[");
-        Console.Write($"{printMx[k,l]}, ");
-        Console.Write($"\b\b]");   
-        }
-        Console.WriteLine("");
-}
+{   
+    Console.Write("[");
+    for (int j = 0; j < printArr.Length; j++)
+    {
+        Console.Write($"{printArr[j]},");
+    }
+    Console.Write("]");
+    Console.WriteLine();
+} 
 
+PrintArray(GetArray(values));
 
-GetArray(values);
