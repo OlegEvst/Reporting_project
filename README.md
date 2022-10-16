@@ -15,7 +15,7 @@
 
 ![block diagram](/block%20diagram.jpg)
 
-**Алгоритм реализован на языке с#, файл с коммантариями находится:**
+**Алгоритм реализован на языке с#, файл с коммeнтариями находится:**
  > Reporting_project/Reporting_project_evstifeev
 
  > фаил: Reporting_project_evstifeev.cs
